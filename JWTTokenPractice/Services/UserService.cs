@@ -51,7 +51,7 @@ namespace Transflower.JWTToken.Services{
 
         private string generateJwtToken(User user){
             var tokenHandler= new JwtSecurityTokenHandler();
-            var key=Encoding.ASCII.GetBytes(_appSetting.tokenkey);
+            var key=Encoding.ASCII.GetBytes(_appSetting.TokenKey);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

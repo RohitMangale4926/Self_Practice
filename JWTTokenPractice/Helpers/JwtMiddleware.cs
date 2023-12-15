@@ -24,8 +24,9 @@ namespace Transflower.JWTToken.Helper
 
         public async Task Invoke(HttpContext context, IUserService userService)
         {
+            
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-
+            Console.WriteLine("Extracting token : "+token);
             if (token != null)
                 attachUserToContext(context, userService, token);
 
@@ -37,9 +38,11 @@ namespace Transflower.JWTToken.Helper
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(_appSetting.tokenkey);
+                var key = Encoding.ASCII.GetBytes(_appSetting.TokenKey);
+                Console.WriteLine(" InMiddleware key " +key);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
+                    
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
@@ -52,7 +55,9 @@ namespace Transflower.JWTToken.Helper
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 // attach user to context on successful jwt validation
+                Console.WriteLine("UserId : "+userId);
                 context.Items["User"] = userService.GetByID(userId);
+               
             }
             catch
             {
