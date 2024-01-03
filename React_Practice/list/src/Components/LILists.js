@@ -5,21 +5,42 @@ import ReactDOM from 'react-dom';
 // unordered list
 function Navmenu(props)
 {
-	const list = props.menuitems;
-
+	
+	const list = props.numbers;
+	
 	const updatedList = list.map((listItems)=>{
 		return <li>{listItems}</li>;
+		
 	});
 
 	return(
-		<ul>{updatedList}</ul>
+		<div>
+				
+			<ul>{updatedList}</ul>
+			
+		</div>
+			
+			
+		
+		
 	);
 }
 
-const menuItems = [1,2,3,4,5];
+function MenuList(){
+	const menuItems = [1,2,3,4,5];
+	return(
+        <div>
+            <h1>Displaying List</h1>
+            <Navmenu numbers={menuItems}/>
+        </div>
+    )
+}
 
-ReactDOM.render(
-	<Navmenu menuitems = {menuItems} />,
-	document.getElementById('root')
-);
-export default Navmenu;
+
+
+
+// ReactDOM.render(
+// 	<Navmenu menuitems = {menuItems} />,
+// 	document.getElementById('root')
+// );
+export default MenuList;
