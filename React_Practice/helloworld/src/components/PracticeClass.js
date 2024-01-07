@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React,{ Component } from "react";
 
 class PracticeClass extends Component{
    
@@ -17,9 +17,9 @@ class PracticeClass extends Component{
     render(){
         return(
             <div>
-                    <h1>This is CLASS Component</h1>
+                    <h2>This is CLASS Component (4th Page)</h2>
                     <h3>{this.state.data}</h3>
-                    <button onClick={()=>this.changed()}>UPDATE DATA</button>
+                    <button onClick={()=>this.changed()}>UPDATE DATA</button><hr/>
             </div>
            
         );

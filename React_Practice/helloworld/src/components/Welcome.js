@@ -4,7 +4,7 @@ import State from "./State"
 function Welcome(){
     return(
         <div>
-            <h1>Welcome Rohit Mangale</h1>
+            <h1>Welcome Rohit Mangale (1-Welcome page)</h1><hr/>
             <User/><hr/>
             <State/>
             

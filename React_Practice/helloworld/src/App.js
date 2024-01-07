@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import PracticeProps from './components/PracticeProps';
-// import  Welcome from './components/Welcome';
+import  Welcome from './components/Welcome';
+import Student from './components/Student';
+import PracticePropsSend from './components/PracticePropsSend';
+import HandleArray from './components/HandleArray';
+import Ref from './components/Ref';
 
-function App() {
-  const [name,setName]=useState("Rohit")
-  
+
+function App() {  
   return (
     <div className="App">
-      {/* <Welcome/> */}
-      <PracticeProps name={"Rohit Mangale"} email={"rm@gmail.com"} />
-      <PracticeProps name={name} />
-      <button onClick={()=>{setName("RM TAP Student")}}><b>UPDATE NAME</b></button>
+       <Welcome/> 
+       <PracticePropsSend/>      
+       <Student/>  
+       <HandleArray/> 
+       <Ref/>       
+       
     </div>
   );
 }

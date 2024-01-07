@@ -1,12 +1,12 @@
-
+import React from "react"
 
 function PracticeProps(props){
     console.log(props)
    
     return(
         <div>
-            <h1>Value Passed Via <i>Props</i> </h1><hr></hr>
-            <h3>Name : {props.name} & Email : {props.email}</h3><hr/>         
+            <h2>Accepted Data From PracticepropsSend via Props </h2>
+            <h4>Name : {props.name} & Email : {props.email} Count:{props.count}</h4>         
             
         </div>
        
