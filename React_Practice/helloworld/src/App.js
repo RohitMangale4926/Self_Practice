@@ -5,6 +5,7 @@ import Student from './components/Student';
 import PracticePropsSend from './components/PracticePropsSend';
 import HandleArray from './components/HandleArray';
 import Ref from './components/Ref';
+import CallConfirmation from './components/CallConfirmation';
 
 
 function App() {  
@@ -14,7 +15,8 @@ function App() {
        <PracticePropsSend/>      
        <Student/>  
        <HandleArray/> 
-       <Ref/>       
+       <Ref/>  
+       <CallConfirmation/>     
        
     </div>
   );
