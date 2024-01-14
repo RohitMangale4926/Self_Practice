@@ -1,5 +1,6 @@
 -- Active: 1696576841746@@127.0.0.1@3306@bankingdb
 /* don't change sequence of any records*/
+
 INSERT INTO customers(bankcustomerid,usertype) VALUES(1,"C");
 INSERT INTO customers(bankcustomerid,usertype) VALUES(2,"C");
 INSERT INTO customers(bankcustomerid,usertype) VALUES(3,"C");
@@ -50,14 +51,14 @@ INSERT INTO customers (bankcustomerid, usertype) VALUES (40, "I");
 INSERT INTO customers(bankcustomerid,usertype) VALUES(14,"C");-- run this query at last
 
 
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('39025546601','business','MAHB0000286',200000,'2022-03-01',1);
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('39025546612','business','BARBO0000286',225700,'2022-03-04',2);        
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('12656767876','business','AXIS0000296',2352500,'2021-07-01',3);   
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('67675456546','business','AXIS0000296',789000,'2021-06-01',4); 
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('45656577687','business','AXIS0000296',2352500,'2022-03-11',5); 
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('46556565566','business','AXIS0000296',2352500,'2022-04-21',6); 
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('56423234233','savings','AXIS0000296',2352500,'2021-11-11',7);
-INSERT INTO accounts(acctnumber, accttype, ifsccode, balance, registereddate, customerid) VALUES
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('39025546601','business','MAHB0000286',200000,'2022-03-01',1);
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('39025546612','business','BARBO0000286',225700,'2022-03-04',2);        
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('12656767876','business','AXIS0000296',2352500,'2021-07-01',3);   
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('67675456546','business','AXIS0000296',789000,'2021-06-01',4); 
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('45656577687','business','AXIS0000296',2352500,'2022-03-11',5); 
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('46556565566','business','AXIS0000296',2352500,'2022-04-21',6); 
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('56423234233','savings','AXIS0000296',2352500,'2021-11-11',7);
+INSERT INTO accounts(acctnumber, accttype, ifsccode, balance, registereddate, custid) VALUES
 ('9999999999', 'savings', 'SBI0000123', 32000, '2022-11-19', 8),
 ('7777777777', 'savings', 'AXIS0000456', 65000, '2022-12-31', 9),
 ('1234432112', 'savings', 'HDFC0000234', 10000, '2021-01-05', 10),
@@ -97,50 +98,62 @@ INSERT INTO accounts(acctnumber, accttype, ifsccode, balance, registereddate, cu
 ('9999444433', 'savings', 'SBI0000789', 96000, '2022-11-06', 44),
 ('1111444455', 'savings', 'AXIS0000789', 52000, '2022-12-19', 45);
 
-INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,customerid)VALUES('123456789','business','AXIS0000999',200000000,'1975-01-01',47);
+INSERT INTO accounts(acctnumber,accttype,ifsccode,balance,registereddate,custid)VALUES('123456789','business','AXIS0000999',200000000,'1975-01-01',47);
 
-INSERT INTO loanapplicants(applicatid,accountid,applydate,panid,loanamount,loantype,loanstatus)VALUES(1,3,'2023-08-11','AFD67550',1000000,'business','approved');
-INSERT INTO loanapplicants(accountid,applydate,panid,loanamount,loantype,loanstatus)VALUES(6,'2022-12-11','JHG6753',5000000,'business','approved');
-INSERT INTO loanapplicants(accountid,applydate,panid,loanamount,loantype,loanstatus)VALUES(4,'2023-02-5','KLM67551',7500000,'business','approved');
-INSERT INTO loanapplicants(accountid,applydate,panid,loanamount,loantype,loanstatus)VALUES(8,'2021-08-1','ZXC6755',2000000,'home','approved');
-INSERT INTO loanapplicants(accountid,applydate,panid,loanamount,loantype,loanstatus)VALUES(9,'2019-12-15','KLT6756',3000000,'home','approved');
-INSERT INTO loanapplicants(accountid,applydate,panid,loanamount,loantype,loanstatus)VALUES(10,'2015-1-15','ERT6757',400000,'home','approved');
+INSERT INTO loantype(loantype,intrestrate)VALUES('home',9.5);
+INSERT INTO loantype(loantype,intrestrate)VALUES('personal',11.0);
+INSERT INTO loantype(loantype,intrestrate)VALUES('car',12.5);
+INSERT INTO loantype(loantype,intrestrate)VALUES('education',7.6);
+INSERT INTO loantype(loantype,intrestrate)VALUES('bussiness',15.6);
 
-INSERT INTO loan(loanid,amount,loansanctiondate,duration,emiday,emiamount,intrestrate,acctId)VALUES(1,'1000000','2023-09-08',15,10,9321,9.5,3);
-INSERT INTO loan(amount,loansanctiondate,duration,emiday,emiamount,intrestrate,acctId)VALUES('5000000','2023-01-31',15,15,56516,10.9,6);
-INSERT INTO loan(amount,loansanctiondate,duration,emiday,emiamount,intrestrate,acctId)VALUES('7500000','2023-03-25',15,5,90013,12.00,4);
-INSERT INTO loan(amount,loansanctiondate,duration,emiday,emiamount,intrestrate,acctId)VALUES('2000000','2021-09-09',20,10,17356,8.5,8);
-INSERT INTO loan(amount,loansanctiondate,duration,emiday,emiamount,intrestrate,acctId)VALUES('3000000','2020-01-31',12,15,35679,9.9,9);
-INSERT INTO loan(amount,loansanctiondate,duration,emiday,emiamount,intrestrate,acctId)VALUES('400000','2015-03-25',10,5,5510,11.00,10);
 
+
+INSERT INTO loanapplications(applicationid,applicationdate,loanamount,loanduration,accountid,loantypeid)VALUES(11,'2023-08-11',500000,10,1,100);
+INSERT INTO loanapplications(applicationid,applicationdate,loanamount,loanduration,accountid,loantypeid)VALUES(12,'2023-08-11',8900000,15,6,100);
+INSERT INTO loanapplications(applicationdate,loanamount,loanduration,accountid,loantypeid)VALUES
+('2023-10-25',500000,10,1,100),
+('2023-11-30',100000,15,2,101),
+('2023-01-25',750000,17,3,102),
+('2023-02-09',850000,20,4,100);
+
+
+INSERT INTO loan(loansanctiondate,emiamount,applicationid)VALUES('2023-09-08',9321,11);
+
+show tables;
+
+CALL fundtransfer("39025546601","MAHB0000286","39025546612","BARBO0000286",2000,@transactionId);
+SELECT @transactionId;
+
+
+-- ----------------------------------Remaining   --------- 
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(3,12656767876,9321,'2023-10-10','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,9321,'2023-10-25','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,9321,'2023-10-25','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-01-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-01-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-01-15','D',"EMI");
 
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-02-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-02-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-02-15','D',"EMI");
 
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-03-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-03-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-03-15','D',"EMI");
 
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-04-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-04-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-04-15','D',"EMI");
 
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-05-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-05-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-05-15','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-06-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-06-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-06-15','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-07-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-07-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-07-15','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-08-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-08-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-08-15','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-09-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-09-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-09-15','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-10-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-10-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-10-15','D',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(6,46556565566,5510,'2023-11-15','W',"EMI");
-INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,5510,'2023-11-15','D',"EMI");
+INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(48,123456789,5510,'2023-11-15','D',"EMI");
 
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(4,67675456546,90013,'2023-04-5','W',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,90013,'2023-04-5','D',"EMI");
@@ -159,7 +172,6 @@ INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,oper
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(4,67675456546,90013,'2023-11-5','W',"EMI");
 INSERT INTO operations(acctId,acctnumber,amount,operationdate,operationmode,operationtype)VALUES(46,123456789,90013,'2023-11-5','D',"EMI");
 
-
 INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(15,16,'2023-10-10');
 INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(17,18,'2023-01-15');
 INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(19,20,'2023-02-15');
@@ -173,12 +185,15 @@ INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(33
 INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(35,36,'2023-10-15');
 INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(37,38,'2023-11-15');
 INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(39,40,'2023-04-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(41,42,'2023-05-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(43,44,'2023-06-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(45,46,'2023-07-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(47,48,'2023-08-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(49,50,'2023-09-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(51,52,'2023-10-05');
-INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(53,54,'2023-11-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(41,42,'2023-05-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(43,44,'2023-06-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(45,46,'2023-07-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(47,48,'2023-08-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(49,50,'2023-09-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(51,52,'2023-10-05');
+-- INSERT INTO transactions(fromoperationid,tooperationid,transactiondate)VALUES(53,54,'2023-11-05');
 
-select * from transactions
+
+
+
+
